@@ -6,14 +6,14 @@
   --netda-color: #FBB702;
   --netda-color-light: rgba(251, 183, 2, 0.1);
   
-  --bg-color: #f8fafc;
+  --bg-color: #f1f5f9;
   --card-bg: #ffffff;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --border-color: #e2e8f0;
+  --text-main: #1a1a1a;
+  --text-muted: #4b5563;
+  --border-color: #e5e7eb;
   
-  --primary-color: #3b82f6; /* Used initially before outcome */
-  --primary-color-hover: #2563eb;
+  --primary-color: #2e3133; /* Dark Grey for Iscte theme */
+  --primary-color-hover: #000000;
   
   --transition-speed: 0.3s;
 }
@@ -73,13 +73,13 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary {
   background-color: var(--primary-color);
   color: white;
-  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
   background-color: var(--primary-color-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.23);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-outline {
@@ -120,6 +120,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 640px) {
   .app-container {
-    padding: 1rem;
+    padding: 1rem 0.5rem;
   }
 }
+

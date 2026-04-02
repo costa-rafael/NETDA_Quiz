@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import './WelcomeScreen.css';
 
 export default function WelcomeScreen({ onStart }) {
@@ -7,11 +7,12 @@ export default function WelcomeScreen({ onStart }) {
     <div className="welcome-screen fade-in">
       <div className="bg-pattern"></div>
       <div className="content-card">
-        <div className="icon-wrapper">
-          <Sparkles className="icon-sparkle" size={32} />
+        <div className="logos-wrapper">
+          <img src="/iscte-sintra.png" alt="Logo Iscte Sintra" className="logo-iscte" />
+          <img src="/netda-logo.png" alt="Logo NETDA" className="logo-netda" />
         </div>
         <h1 className="title">
-          Descobre a Tua <span className="highlight">Licenciatura Ideal</span>
+          Descobre a Tua <br className="mobile-break" /><span className="highlight">Licenciatura Ideal</span>
         </h1>
         <p className="subtitle">
           Iscte-IUL Escola de Tecnologias Digitais Aplicadas (Sintra)
