@@ -1,23 +1,15 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import './WelcomeScreen.css';
-import CircuitBackground from './CircuitBackground';
 
 export default function WelcomeScreen({ onStart }) {
   return (
-    <>
-      <CircuitBackground />
-      <div className="welcome-screen fade-in">
+    <div className="welcome-screen fade-in">
         <div className="content-card">
-          <div className="logos-wrapper" style={{ justifyContent: 'center' }}>
-            <img src={`${import.meta.env.BASE_URL}iscte-sintra.png`} alt="Logo Iscte Sintra" className="logo-iscte" />
-          </div>
+          <div className="tech-badge">Iscte-IUL • Escola de Tecnologias Digitais Aplicadas</div>
           <h1 className="title">
-            Descobre a Tua <br className="mobile-break" /><span className="highlight">Licenciatura Ideal</span>
+            Descobre a Tua <span className="highlight">Licenciatura Ideal</span>
           </h1>
-          <p className="subtitle">
-            Iscte-IUL Escola de Tecnologias Digitais Aplicadas (Sintra)
-          </p>
           <p className="description">
             Responde a 10 perguntas rápidas sobre os teus interesses e fica a saber qual o curso que melhor se adapta a ti.
           </p>
@@ -26,6 +18,5 @@ export default function WelcomeScreen({ onStart }) {
           </button>
         </div>
       </div>
-    </>
   );
 }

@@ -226,4 +226,13 @@
   .nucleo-name {
     font-size: 2rem;
   }
+  .nucleo-banner {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+  .nucleo-social-links {
+    justify-content: center;
+  }
 }

@@ -3,6 +3,7 @@ import WelcomeScreen from './components/WelcomeScreen';
 import QuizScreen from './components/QuizScreen';
 import ProcessingScreen from './components/ProcessingScreen';
 import ResultScreen from './components/ResultScreen';
+import CircuitBackground from './components/CircuitBackground';
 import { cursos, questions, nucleos } from './data';
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
 
   return (
     <div className="app-container">
+      <CircuitBackground />
       {currentScreen === 'welcome' && (
         <WelcomeScreen onStart={startQuiz} />
       )}

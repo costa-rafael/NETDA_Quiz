@@ -6,69 +6,42 @@
   height: 100vh;
   overflow: hidden;
   z-index: -1;
-  background: linear-gradient(135deg, #001f3f 0%, #004b66 50%, var(--primary-color) 100%);
+  background-color: #f8fafc; /* Clean Light Mode Background */
 }
 
-.circuit-overlay {
+.glow-orb {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+  top: 50%;
+  left: 50%;
+  width: 120vw;
+  height: 120vw;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at center, rgba(0, 169, 224, 0.08) 0%, transparent 60%);
   z-index: 1;
+  animation: pulseOrb 8s ease-in-out infinite alternate;
 }
 
-.circuit-svg {
+.dot-grid {
   position: absolute;
-  top: 0;
+  top: -50px;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% + 50px);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0;
   z-index: 0;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  animation: gridMove 20s linear infinite;
+  mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
 }
 
-.circuit-path {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.8);
-  stroke-width: 0.2;
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  animation: drawCircuit linear infinite;
+@keyframes gridMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(32px); }
 }
 
-.circuit-node {
-  fill: #fff;
-  transition: all 0.3s ease;
-}
-
-.pulsing-node {
-  animation: pulseNode 2s infinite alternate;
-}
-
-@keyframes drawCircuit {
-  0% {
-    stroke-dashoffset: 100;
-  }
-  50% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: -100;
-  }
-}
-
-@keyframes pulseNode {
-  0% {
-    r: 0.5;
-    fill: rgba(255, 255, 255, 0.6);
-    filter: drop-shadow(0 0 1px rgba(255,255,255,0.5));
-  }
-  100% {
-    r: 1.2;
-    fill: #fff;
-    filter: drop-shadow(0 0 3px #fff);
-  }
+@keyframes pulseOrb {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
 }
