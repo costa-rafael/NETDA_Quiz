@@ -41,7 +41,12 @@
   border-radius: 20px;
   padding: 1.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+.info-card:nth-child(1) { animation-delay: 0.2s; }
+.info-card:nth-child(2) { animation-delay: 0.4s; }
 
 .card-header {
   display: flex;
@@ -87,13 +92,18 @@
 /* Núcleo Banner */
 .nucleo-banner {
   border-radius: 20px;
-  padding: 2rem;
+  padding: 2.5rem;
   color: white;
   margin-bottom: 2.5rem;
   position: relative;
   overflow: hidden;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.6s;
 }
 
 .banner-nest {
@@ -145,6 +155,46 @@
   background-size: 20px 20px;
   border-radius: 50%;
   z-index: 1;
+}
+
+/* Social Buttons & Logo */
+.nucleo-social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.social-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.nucleo-logo-container {
+  z-index: 2;
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.result-nucleo-logo {
+  max-width: 120px;
+  max-height: 60px;
+  object-fit: contain;
 }
 
 /* Actions */

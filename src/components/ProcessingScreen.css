@@ -13,10 +13,17 @@
   margin-top: 2rem;
   font-size: 1.5rem;
   color: var(--text-main);
-  background: linear-gradient(90deg, var(--nest-color), var(--netda-color));
+  background: linear-gradient(90deg, var(--primary-color), #00e5ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: pulseText 2s ease-in-out infinite;
+}
+
+@keyframes pulseText {
+  0% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0.8; transform: scale(1); }
 }
 
 .loading-subtext {
@@ -24,78 +31,40 @@
   margin-top: 0.5rem;
 }
 
-/* Cube Animation */
-.cube-wrapper {
-  transform: scale(1.5);
-  display: flex;
-  justify-content: center;
-  height: 50px;
-}
-
-.cube-folding {
-  width: 50px;
-  height: 50px;
-  display: inline-block;
-  transform: rotate(45deg);
-  font-size: 0;
-}
-
-.cube-folding span {
+/* Cyber Radar Animation */
+.cyber-radar {
   position: relative;
-  width: 25px;
-  height: 25px;
-  transform: scale(1.1);
-  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
 }
 
-.cube-folding span::before {
-  content: "";
-  background-color: var(--primary-color);
+.radar-circle, .radar-circle-2 {
   position: absolute;
+  top: 0; 
   left: 0;
-  top: 0;
-  display: block;
-  width: 25px;
-  height: 25px;
-  transform-origin: 100% 100%;
-  animation: folding 2.5s infinite linear both;
+  width: 100%; 
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid var(--primary-color);
+  opacity: 0;
+  box-shadow: 0 0 15px rgba(0, 169, 224, 0.4), inset 0 0 15px rgba(0, 169, 224, 0.4);
+  animation: radarPulse 2s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
 }
 
-.cube-folding .leaf2 {
-  transform: rotateZ(90deg) scale(1.1);
-}
-.cube-folding .leaf2::before {
-  background-color: var(--nest-color);
-  animation-delay: 0.3s;
+.radar-circle-2 {
+  animation-delay: 1s;
 }
 
-.cube-folding .leaf3 {
-  transform: rotateZ(270deg) scale(1.1);
-}
-.cube-folding .leaf3::before {
-  background-color: var(--netda-color);
-  animation-delay: 0.9s;
-}
-
-.cube-folding .leaf4 {
-  transform: rotateZ(180deg) scale(1.1);
-}
-.cube-folding .leaf4::before {
-  background-color: #0f172a;
-  animation-delay: 0.6s;
-}
-
-@keyframes folding {
-  0%, 10% {
-    transform: perspective(140px) rotateX(-180deg);
-    opacity: 0;
+@keyframes radarPulse {
+  0% { 
+    transform: scale(0.1); 
+    opacity: 1; 
+    border-width: 8px; 
   }
-  25%, 75% {
-    transform: perspective(140px) rotateX(0deg);
-    opacity: 1;
-  }
-  90%, 100% {
-    transform: perspective(140px) rotateY(180deg);
-    opacity: 0;
+  100% { 
+    transform: scale(1.5); 
+    opacity: 0; 
+    border-width: 1px; 
   }
 }

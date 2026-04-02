@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, RotateCcw, BookOpen, Briefcase } from 'lucide-react';
+import { ExternalLink, RotateCcw, BookOpen, Briefcase, Globe } from 'lucide-react';
 import './ResultScreen.css';
 
 export default function ResultScreen({ resultCourse, nucleoInfo, onReset }) {
@@ -50,8 +50,26 @@ export default function ResultScreen({ resultCourse, nucleoInfo, onReset }) {
           <span className="nucleo-badge">Apoio Estudantil</span>
           <h2 className="nucleo-name">{nucleoInfo.name}</h2>
           <p className="nucleo-fullname">{nucleoInfo.fullName}</p>
+          
+          <div className="nucleo-social-links">
+            {nucleoInfo.instagram && (
+              <a href={nucleoInfo.instagram} target="_blank" rel="noopener noreferrer" className="social-btn">
+                <Globe size={18} /> Instagram
+              </a>
+            )}
+            {nucleoInfo.linktree && (
+              <a href={nucleoInfo.linktree} target="_blank" rel="noopener noreferrer" className="social-btn">
+                <ExternalLink size={18} /> Linktree
+              </a>
+            )}
+          </div>
         </div>
         <div className="nucleo-pattern"></div>
+        {nucleoInfo.logoFile && (
+          <div className="nucleo-logo-container">
+            <img src={`${import.meta.env.BASE_URL}${nucleoInfo.logoFile}`} alt={`Logo ${nucleoInfo.name}`} className="result-nucleo-logo" onError={(e) => e.target.style.display='none'} />
+          </div>
+        )}
       </div>
 
       <div className="action-buttons">

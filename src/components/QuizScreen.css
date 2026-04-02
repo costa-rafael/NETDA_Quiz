@@ -43,9 +43,16 @@
 
 .progress-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--nest-color), var(--netda-color));
+  background: linear-gradient(90deg, #001f3f, var(--primary-color), #00e5ff, var(--primary-color));
+  background-size: 200% 100%;
   border-radius: 9999px;
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: shimmerProgress 2s linear infinite;
+}
+
+@keyframes shimmerProgress {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }
 
 .question-card {
@@ -83,6 +90,18 @@
   gap: 1rem;
   font-family: 'Inter', sans-serif;
   color: var(--text-main);
+  opacity: 0;
+  animation: slideUpOption 0.4s ease forwards;
+}
+
+.option-card:nth-child(1) { animation-delay: 0.1s; }
+.option-card:nth-child(2) { animation-delay: 0.2s; }
+.option-card:nth-child(3) { animation-delay: 0.3s; }
+.option-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideUpOption {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .option-card:hover:not(:disabled) {

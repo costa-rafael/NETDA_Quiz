@@ -3,13 +3,19 @@ export const nucleos = {
     id: 'nest',
     name: 'NEST',
     fullName: 'Núcleo de Estudantes de Socioeconómicas e Tecnologias',
-    color: '#008000'
+    color: '#008000',
+    instagram: '#',
+    linktree: '#',
+    logoFile: 'nest-logo.png'
   },
   netda: {
     id: 'netda',
     name: 'NETDA',
     fullName: 'Núcleo de Estudantes de Tecnologias Digitais e Aplicadas',
-    color: '#FBB702'
+    color: '#FBB702',
+    instagram: '#',
+    linktree: '#',
+    logoFile: 'netda-logo.png'
   }
 };
 
