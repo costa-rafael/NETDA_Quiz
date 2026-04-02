@@ -8,8 +8,8 @@ export default function WelcomeScreen({ onStart }) {
       <div className="bg-pattern"></div>
       <div className="content-card">
         <div className="logos-wrapper">
-          <img src="/iscte-sintra.png" alt="Logo Iscte Sintra" className="logo-iscte" />
-          <img src="/netda-logo.png" alt="Logo NETDA" className="logo-netda" />
+          <img src={`${import.meta.env.BASE_URL}iscte-sintra.png`} alt="Logo Iscte Sintra" className="logo-iscte" />
+          <img src={`${import.meta.env.BASE_URL}netda-logo.png`} alt="Logo NETDA" className="logo-netda" />
         </div>
         <h1 className="title">
           Descobre a Tua <br className="mobile-break" /><span className="highlight">Licenciatura Ideal</span>
