@@ -24,7 +24,7 @@ export default function QuizScreen({ questions, onComplete }) {
     setTimeout(() => {
       if (currentIndex < questions.length - 1) {
         setCurrentIndex(currentIndex + 1);
-        setAnimating(false);
+        setTimeout(() => setAnimating(false), 200);
       } else {
         onComplete(newScores);
       }
