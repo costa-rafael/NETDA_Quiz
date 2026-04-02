@@ -1,0 +1,101 @@
+.processing-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.loader-container {
+  text-align: center;
+}
+
+.loading-text {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  color: var(--text-main);
+  background: linear-gradient(90deg, var(--nest-color), var(--netda-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.loading-subtext {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* Cube Animation */
+.cube-wrapper {
+  transform: scale(1.5);
+  display: flex;
+  justify-content: center;
+  height: 50px;
+}
+
+.cube-folding {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  transform: rotate(45deg);
+  font-size: 0;
+}
+
+.cube-folding span {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  transform: scale(1.1);
+  display: inline-block;
+}
+
+.cube-folding span::before {
+  content: "";
+  background-color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 25px;
+  height: 25px;
+  transform-origin: 100% 100%;
+  animation: folding 2.5s infinite linear both;
+}
+
+.cube-folding .leaf2 {
+  transform: rotateZ(90deg) scale(1.1);
+}
+.cube-folding .leaf2::before {
+  background-color: var(--nest-color);
+  animation-delay: 0.3s;
+}
+
+.cube-folding .leaf3 {
+  transform: rotateZ(270deg) scale(1.1);
+}
+.cube-folding .leaf3::before {
+  background-color: var(--netda-color);
+  animation-delay: 0.9s;
+}
+
+.cube-folding .leaf4 {
+  transform: rotateZ(180deg) scale(1.1);
+}
+.cube-folding .leaf4::before {
+  background-color: #0f172a;
+  animation-delay: 0.6s;
+}
+
+@keyframes folding {
+  0%, 10% {
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%, 75% {
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%, 100% {
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
