@@ -109,18 +109,21 @@ export default function ResultScreen({ resultCourse, nucleoInfo, onReset }) {
       </div>
 
       <div className="action-buttons">
-
         <a 
           href={resultCourse.link || "https://www.iscte-iul.pt/"} 
           target="_blank" 
           rel="noopener noreferrer" 
           className="btn action-btn-primary"
-          style={{ backgroundColor: '#FBB702', color: '#ffffff', border: 'none' }}
+          style={{ backgroundColor: accentColor, color: '#ffffff', border: 'none' }}
         >
           Saber mais no site <ExternalLink size={18} />
         </a>
         
-        <button onClick={onReset} className="btn btn-outline" style={{ borderColor: accentColor, color: accentColor }}>
+        <button 
+          onClick={onReset} 
+          className="btn btn-outline" 
+          style={{ backgroundColor: accentColor, color: '#ffffff', border: 'none' }}
+        >
           Refazer Quiz <RotateCcw size={18} />
         </button>
       </div>
