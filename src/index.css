@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --nest-color: #008000;
-  --nest-color-light: rgba(0, 128, 0, 0.1);
+  --nest-color: #10B981;
+  --nest-color-light: rgba(16, 185, 129, 0.1);
   --netda-color: #FBB702;
   --netda-color-light: rgba(251, 183, 2, 0.1);
   
-  --bg-color: #f1f5f9;
+  --bg-color: #f8fafc;
   --card-bg: #ffffff;
-  --text-main: #1a1a1a;
-  --text-muted: #4b5563;
-  --border-color: #e5e7eb;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
   
   --primary-color: #00A9E0; /* Iscte Sintra Blue */
-  --primary-color-hover: #0088b3;
+  --primary-color-hover: #008ebf;
   
   --transition-speed: 0.3s;
 }

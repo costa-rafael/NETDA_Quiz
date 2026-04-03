@@ -43,7 +43,7 @@
 
 .progress-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #0088b3, var(--primary-color), #00e5ff, var(--primary-color));
+  background: linear-gradient(90deg, var(--primary-color-hover), var(--primary-color), #00e5ff, var(--primary-color));
   background-size: 200% 100%;
   border-radius: 9999px;
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);

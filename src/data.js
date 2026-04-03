@@ -3,6 +3,7 @@ export const nucleos = {
     id: 'nest',
     name: 'NEST',
     fullName: 'Núcleo de Estudantes de Socioeconómicas e Tecnologias',
+    flavorText: 'O NEST é o teu espaço para cruzar gestão, economia e sociedade com a revolução digital. Junta-te a uma equipa dinâmica pronta a debater grandes ideias organizacionais e o fator humano da tecnologia.',
     color: '#008000',
     instagram: '#',
     linktree: '#',
@@ -12,6 +13,7 @@ export const nucleos = {
     id: 'netda',
     name: 'NETDA',
     fullName: 'Núcleo de Estudantes de Tecnologias Digitais e Aplicadas',
+    flavorText: 'Bem-vindo ao centro da inovação e disrupção! O NETDA é onde os apaixonados por código, IA e engenharia se encontram. Prepara-te para hackathons, projetos práticos e construir o futuro com as próprias mãos.',
     color: '#FBB702',
     instagram: '#',
     linktree: '#',
@@ -24,71 +26,91 @@ export const cursos = [
     id: 'pes',
     title: 'Política, Economia e Sociedade',
     nucleo: 'nest',
+    description: 'Prepara profissionais capazes de compreender a complexidade das sociedades contemporâneas, cruzando conhecimentos para atuarem em organizações com foco no plano de políticas e visão estratégica.',
     themes: ['Ciência política', 'Sociologia', 'Políticas públicas'],
-    careers: ['Analista de políticas públicas', 'Técnico de administração pública', 'Trabalho em ONGs']
+    careers: ['Analista de políticas públicas', 'Técnico de administração pública', 'Trabalho em ONGs'],
+    link: 'https://www.iscte-iul.pt/localize/pt?override_redirect=%2Fcursos%2Fcurso%2F0394'
   },
   {
     id: 'tdg',
     title: 'Tecnologias Digitais e Gestão',
     nucleo: 'nest',
+    description: 'A simbiose perfeita entre a liderança organizacional e a inovação tecnológica. Aprenderás a transpor tecnologias emergentes para os modelos de negócio, unindo as equipas técnicas à gestão corporativa.',
     themes: ['Gestão', 'Transformação digital', 'Marketing digital'],
-    careers: ['Gestor de transformação digital', 'Analista de negócios', 'Empreendedor']
+    careers: ['Gestor de transformação digital', 'Analista de negócios', 'Empreendedor'],
+    link: 'https://www.iscte-iul.pt/localize/pt?override_redirect=%2Fcursos%2Fcurso%2F0391'
   },
   {
     id: 'dsa',
     title: 'Desenvolvimento de Software e Aplicações',
     nucleo: 'netda',
+    description: 'Mergulha na criação do futuro digital. Como programador e arquiteto de software, serás tu a construir as aplicações e plataformas transversais de alto impacto que movem o mundo digital.',
     themes: ['Programação', 'Engenharia de software', 'Web/Mobile'],
-    careers: ['Programador', 'Engenheiro de software', 'Arquiteto de software']
+    careers: ['Programador', 'Engenheiro de software', 'Arquiteto de software'],
+    link: 'https://www.iscte-iul.pt/localize/pt?override_redirect=%2Fcursos%2Fcurso%2F0385'
   },
   {
     id: 'matd',
     title: 'Matemática Aplicada e Tecnologias Digitais',
     nucleo: 'netda',
+    description: 'Transforma dados complexos e estatística em descobrimentos exatos. Prepara-te para resolver desafios analíticos de Big Data e fornecer otimização garantida às necessidades das organizações de topo.',
     themes: ['Estatística', 'Big Data', 'Modelação matemática'],
-    careers: ['Analista de dados', 'Cientista de dados', 'Consultor']
+    careers: ['Analista de dados', 'Cientista de dados', 'Consultor'],
+    link: 'https://www.iscte-iul.pt/localize/pt?override_redirect=%2Fcursos%2Fcurso%2F0426'
   },
   {
     id: 'tda',
     title: 'Tecnologias Digitais e Automação',
     nucleo: 'netda',
+    description: 'A ponte entre o mundo de software e a reality física. Projeta sistemas autónomos, braços robóticos industriais ou conectividade IoT para garantir infraestruturas cada vez mais eficientes e seguras.',
     themes: ['Robótica', 'IoT (Internet das Coisas)', 'Controlo industrial'],
-    careers: ['Engenheiro de automação', 'Técnico de robótica', 'Especialista em IoT']
+    careers: ['Engenheiro de automação', 'Técnico de robótica', 'Especialista em IoT'],
+    link: 'https://www.iscte-iul.pt/localize/pt?override_redirect=%2Fcursos%2Fcurso%2F0389'
   },
   {
     id: 'tdecs',
     title: 'Tecnologias Digitais, Edifícios e Construção Sustentável',
     nucleo: 'netda',
+    description: 'Alia a transição energética global à revolução tecnológica. Desenharás as chamadas Smart Cities e infraestruturas sustentáveis de amanhã usando BIM e sensores interativos inteligentes.',
     themes: ['BIM', 'Sustentabilidade', 'Eficiência energética'],
-    careers: ['Gestor de projetos sustentáveis', 'Especialista em smart buildings']
+    careers: ['Gestor de projetos sustentáveis', 'Especialista em smart buildings'],
+    link: 'https://www.iscte-iul.pt/localize/pt?override_redirect=%2Fcursos%2Fcurso%2F0429'
   },
   {
     id: 'tde',
     title: 'Tecnologias Digitais Educativas',
     nucleo: 'netda',
+    description: 'Onde o saber encontra a imersão moderna. Redesenha a maneira como partilhamos conhecimentos utilizando o E-learning, mecânicas de gamificação e o design focado no aluno da nova era.',
     themes: ['E-learning', 'Gamificação', 'Design instrucional'],
-    careers: ['Designer instrucional', 'Gestor de plataformas de ensino']
+    careers: ['Designer instrucional', 'Gestor de plataformas de ensino'],
+    link: 'https://www.iscte-iul.pt/localize/pt?override_redirect=%2Fcursos%2Fcurso%2F0386'
   },
   {
     id: 'tdia',
     title: 'Tecnologias Digitais e Inteligência Artificial',
     nucleo: 'netda',
+    description: 'O epicentro natural da disrupção que domina o século. Foca-se em dotar sistemas e máquinas corporativas de capacidades avançadas (Machine Learning e IA) para processar variáveis que transcendem os humanos.',
     themes: ['Machine learning', 'Inteligência Artificial', 'Algoritmos avançados'],
-    careers: ['Especialista em IA', 'Engenheiro de machine learning']
+    careers: ['Especialista em IA', 'Engenheiro de machine learning'],
+    link: 'https://www.iscte-iul.pt/localize/pt?override_redirect=%2Fcursos%2Fcurso%2F0387'
   },
   {
     id: 'tds',
     title: 'Tecnologias Digitais e Saúde',
     nucleo: 'netda',
+    description: 'Um autêntico catalisador do bem-estar. Desde bioinformática até a telemedicina, aprenderás a potenciar o acompanhamento clínico e equipamentos médicos através da agilidade da digitalização.',
     themes: ['Telemedicina', 'Bioinformática', 'Dados clínicos'],
-    careers: ['Gestor de sistemas de saúde', 'Analista de dados clínicos']
+    careers: ['Gestor de sistemas de saúde', 'Analista de dados clínicos'],
+    link: 'https://www.iscte-iul.pt/localize/pt?override_redirect=%2Fcursos%2Fcurso%2F0392'
   },
   {
     id: 'tdsi',
     title: 'Tecnologias Digitais e Segurança de Informação',
     nucleo: 'netda',
+    description: 'Torna-te um guardião das redes virtuais da sociedade. Com base principal em cibersegurança e criptografia, lutarás contra vulnerabilidades para proteger informação altamente crítica num mundo ligado.',
     themes: ['Cibersegurança', 'Criptografia', 'Gestão de risco'],
-    careers: ['Especialista em cibersegurança', 'Auditor de segurança', 'Consultor IT']
+    careers: ['Especialista em cibersegurança', 'Auditor de segurança', 'Consultor IT'],
+    link: 'https://www.iscte-iul.pt/localize/pt?override_redirect=%2Fcursos%2Fcurso%2F0430'
   }
 ];
 

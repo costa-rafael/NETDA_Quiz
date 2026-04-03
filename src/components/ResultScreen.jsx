@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { ExternalLink, RotateCcw, BookOpen, Briefcase, Globe } from 'lucide-react';
+import confetti from 'canvas-confetti';
 import './ResultScreen.css';
 
 export default function ResultScreen({ resultCourse, nucleoInfo, onReset }) {
@@ -9,13 +10,45 @@ export default function ResultScreen({ resultCourse, nucleoInfo, onReset }) {
   const accentColor = isNest ? 'var(--nest-color)' : 'var(--netda-color)';
   const lightColor = isNest ? 'var(--nest-color-light)' : 'var(--netda-color-light)';
 
+  // Trigger confetti on mount
+  useEffect(() => {
+    const defaults = { startVelocity: 25, spread: 90, ticks: 100, zIndex: 0 };
+
+    // Small elegant pop from the left
+    confetti({
+      ...defaults,
+      particleCount: 30,
+      angle: 60,
+      origin: { x: 0.1, y: 0.7 },
+      colors: [accentColor, '#ffffff']
+    });
+
+    // Small elegant pop from the right
+    confetti({
+      ...defaults,
+      particleCount: 30,
+      angle: 120,
+      origin: { x: 0.9, y: 0.7 },
+      colors: [accentColor, '#ffffff']
+    });
+  }, [accentColor]);
+
+
+
   return (
     <div className="result-screen fade-in" style={{ '--dynamic-color': accentColor, '--dynamic-light': lightColor }}>
+
+
       <div className="result-header">
         <h2 className="result-subtitle">A tua Licenciatura Ideal é:</h2>
         <h1 className="result-title" style={{ color: accentColor }}>
           {resultCourse.title}
         </h1>
+        {resultCourse.description && (
+          <p className="result-description">
+            {resultCourse.description}
+          </p>
+        )}
       </div>
 
       <div className="result-content">
@@ -44,13 +77,16 @@ export default function ResultScreen({ resultCourse, nucleoInfo, onReset }) {
         </div>
       </div>
 
-      {/* Núcleo Banner */}
       <div className={`nucleo-banner ${isNest ? 'banner-nest' : 'banner-netda'}`}>
         <div className="nucleo-content">
           <span className="nucleo-badge">Apoio Estudantil</span>
           <h2 className="nucleo-name">{nucleoInfo.name}</h2>
           <p className="nucleo-fullname">{nucleoInfo.fullName}</p>
           
+          {nucleoInfo.flavorText && (
+            <p className="nucleo-flavor-text">{nucleoInfo.flavorText}</p>
+          )}
+
           <div className="nucleo-social-links">
             {nucleoInfo.instagram && (
               <a href={nucleoInfo.instagram} target="_blank" rel="noopener noreferrer" className="social-btn">
@@ -73,14 +109,15 @@ export default function ResultScreen({ resultCourse, nucleoInfo, onReset }) {
       </div>
 
       <div className="action-buttons">
+
         <a 
-          href="https://www.iscte-iul.pt/" 
+          href={resultCourse.link || "https://www.iscte-iul.pt/"} 
           target="_blank" 
           rel="noopener noreferrer" 
           className="btn action-btn-primary"
-          style={{ backgroundColor: accentColor }}
+          style={{ backgroundColor: '#FBB702', color: '#ffffff', border: 'none' }}
         >
-          Saber mais no site do Iscte <ExternalLink size={18} />
+          Saber mais no site <ExternalLink size={18} />
         </a>
         
         <button onClick={onReset} className="btn btn-outline" style={{ borderColor: accentColor, color: accentColor }}>
