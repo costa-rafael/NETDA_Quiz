@@ -118,7 +118,7 @@
 }
 
 .banner-nest {
-  background: linear-gradient(135deg, var(--nest-color), #059669);
+  background: linear-gradient(135deg, var(--nest-color), #006d3d);
 }
 
 .banner-netda {
@@ -211,11 +211,16 @@
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  height: 110px;
 }
 
 .result-nucleo-logo {
-  max-width: 120px;
-  max-height: 60px;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 
@@ -227,6 +232,16 @@
   gap: 1rem;
 }
 
+
+.primary-actions {
+  margin-bottom: 2.5rem;
+}
+
+.main-action-btn {
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
 
 @media (max-width: 640px) {
   .result-title {

@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import './WelcomeScreen.css';
 
-export default function WelcomeScreen({ onStart }) {
+export default function WelcomeScreen({ onStart, t, lang }) {
   return (
     <div className="welcome-screen fade-in">
         {/* Animated Background Orbs */}
@@ -16,13 +16,17 @@ export default function WelcomeScreen({ onStart }) {
             Iscte-IUL • Sintra
           </div>
           <h1 className="title">
-            Descobre a Tua <br/><span className="highlight">Licenciatura Ideal</span>
+            {lang === 'pt' ? (
+              <>Descobre a Tua <br/><span className="highlight">Licenciatura Ideal</span></>
+            ) : (
+              <>Discover Your <br/><span className="highlight">Ideal Degree</span></>
+            )}
           </h1>
           <p className="description">
-            Responde a 10 perguntas rápidas sobre os teus interesses e desbloqueia o curso de tecnologias digitais que combina perfeitamente contigo.
+            {t.welcomeSubtitle}
           </p>
           <button className="btn btn-primary start-btn" onClick={onStart}>
-            Começar o Quiz <ArrowRight size={20} className="arrow-icon" />
+            {t.start} <ArrowRight size={20} className="arrow-icon" />
           </button>
         </div>
       </div>

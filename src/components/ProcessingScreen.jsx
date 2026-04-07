@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './ProcessingScreen.css';
 
-export default function ProcessingScreen({ onFinished }) {
+export default function ProcessingScreen({ onFinished, t }) {
   useEffect(() => {
     // Simulate calculation time
     const timer = setTimeout(() => {
@@ -18,8 +18,8 @@ export default function ProcessingScreen({ onFinished }) {
           <div className="radar-circle"></div>
           <div className="radar-circle-2"></div>
         </div>
-        <h2 className="loading-text">A calcular o teu futuro digital...</h2>
-        <p className="loading-subtext">A cruzar os teus interesses com os nossos cursos...</p>
+        <h2 className="loading-text">{t.processing}</h2>
+        <p className="loading-subtext">{t.processingHint}</p>
       </div>
     </div>
   );

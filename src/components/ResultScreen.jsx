@@ -3,7 +3,7 @@ import { ExternalLink, RotateCcw, BookOpen, Briefcase, Globe } from 'lucide-reac
 import confetti from 'canvas-confetti';
 import './ResultScreen.css';
 
-export default function ResultScreen({ resultCourse, nucleoInfo, onReset }) {
+export default function ResultScreen({ resultCourse, nucleoInfo, onReset, lang, t }) {
   if (!resultCourse) return null;
 
   const isNest = resultCourse.nucleo === 'nest';
@@ -14,7 +14,6 @@ export default function ResultScreen({ resultCourse, nucleoInfo, onReset }) {
   useEffect(() => {
     const defaults = { startVelocity: 25, spread: 90, ticks: 100, zIndex: 0 };
 
-    // Small elegant pop from the left
     confetti({
       ...defaults,
       particleCount: 30,
@@ -23,7 +22,6 @@ export default function ResultScreen({ resultCourse, nucleoInfo, onReset }) {
       colors: [accentColor, '#ffffff']
     });
 
-    // Small elegant pop from the right
     confetti({
       ...defaults,
       particleCount: 30,
@@ -33,20 +31,17 @@ export default function ResultScreen({ resultCourse, nucleoInfo, onReset }) {
     });
   }, [accentColor]);
 
-
-
   return (
     <div className="result-screen fade-in" style={{ '--dynamic-color': accentColor, '--dynamic-light': lightColor }}>
 
-
       <div className="result-header">
-        <h2 className="result-subtitle">A tua Licenciatura Ideal é:</h2>
+        <h2 className="result-subtitle">{t.resultIdeal}</h2>
         <h1 className="result-title" style={{ color: accentColor }}>
-          {resultCourse.title}
+          {lang === 'en' && resultCourse.titleEn ? resultCourse.titleEn : resultCourse.title}
         </h1>
         {resultCourse.description && (
           <p className="result-description">
-            {resultCourse.description}
+            {lang === 'en' && resultCourse.descriptionEn ? resultCourse.descriptionEn : resultCourse.description}
           </p>
         )}
       </div>
@@ -55,10 +50,10 @@ export default function ResultScreen({ resultCourse, nucleoInfo, onReset }) {
         <div className="info-card">
           <div className="card-header">
             <BookOpen className="card-icon" />
-            <h3>O que vais aprender?</h3>
+            <h3>{t.whatLearn}</h3>
           </div>
           <ul className="info-list">
-            {resultCourse.themes.map((theme, i) => (
+            {(lang === 'en' && resultCourse.themesEn ? resultCourse.themesEn : resultCourse.themes).map((theme, i) => (
               <li key={i}>{theme}</li>
             ))}
           </ul>
@@ -67,35 +62,47 @@ export default function ResultScreen({ resultCourse, nucleoInfo, onReset }) {
         <div className="info-card">
           <div className="card-header">
             <Briefcase className="card-icon" />
-            <h3>O que podes ser?</h3>
+            <h3>{t.whatCareer}</h3>
           </div>
           <ul className="info-list">
-            {resultCourse.careers.map((career, i) => (
+            {(lang === 'en' && resultCourse.careersEn ? resultCourse.careersEn : resultCourse.careers).map((career, i) => (
               <li key={i}>{career}</li>
             ))}
           </ul>
         </div>
       </div>
 
+      <div className="action-buttons primary-actions">
+        <a 
+          href={resultCourse.link || "https://www.iscte-iul.pt/"} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="btn action-btn-primary main-action-btn"
+          style={{ backgroundColor: accentColor, color: '#ffffff', border: 'none' }}
+        >
+          {t.learnMore} <ExternalLink size={20} />
+        </a>
+      </div>
+
       <div className={`nucleo-banner ${isNest ? 'banner-nest' : 'banner-netda'}`}>
         <div className="nucleo-content">
-          <span className="nucleo-badge">Apoio Estudantil</span>
+          <span className="nucleo-badge">{t.studentSupport}</span>
           <h2 className="nucleo-name">{nucleoInfo.name}</h2>
-          <p className="nucleo-fullname">{nucleoInfo.fullName}</p>
+          <p className="nucleo-fullname">{lang === 'en' && nucleoInfo.fullNameEn ? nucleoInfo.fullNameEn : nucleoInfo.fullName}</p>
           
           {nucleoInfo.flavorText && (
-            <p className="nucleo-flavor-text">{nucleoInfo.flavorText}</p>
+            <p className="nucleo-flavor-text">{lang === 'en' && nucleoInfo.flavorTextEn ? nucleoInfo.flavorTextEn : nucleoInfo.flavorText}</p>
           )}
 
           <div className="nucleo-social-links">
             {nucleoInfo.instagram && (
               <a href={nucleoInfo.instagram} target="_blank" rel="noopener noreferrer" className="social-btn">
-                <Globe size={18} /> Instagram
+                <Globe size={18} /> {t.visitInstagram}
               </a>
             )}
             {nucleoInfo.linktree && (
               <a href={nucleoInfo.linktree} target="_blank" rel="noopener noreferrer" className="social-btn">
-                <ExternalLink size={18} /> Linktree
+                <ExternalLink size={18} /> {t.visitLinktree}
               </a>
             )}
           </div>
@@ -109,22 +116,12 @@ export default function ResultScreen({ resultCourse, nucleoInfo, onReset }) {
       </div>
 
       <div className="action-buttons">
-        <a 
-          href={resultCourse.link || "https://www.iscte-iul.pt/"} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="btn action-btn-primary"
-          style={{ backgroundColor: accentColor, color: '#ffffff', border: 'none' }}
-        >
-          Saber mais no site <ExternalLink size={18} />
-        </a>
-        
         <button 
           onClick={onReset} 
           className="btn btn-outline" 
           style={{ backgroundColor: accentColor, color: '#ffffff', border: 'none' }}
         >
-          Refazer Quiz <RotateCcw size={18} />
+          {t.redoQuiz} <RotateCcw size={18} />
         </button>
       </div>
     </div>
