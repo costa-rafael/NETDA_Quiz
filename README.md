@@ -49,7 +49,7 @@ A aplicação recomenda cursos divididos entre os dois núcleos principais:
 
 1. **Clonar o repositório:**
    ```bash
-   git clone https://github.com/teu-utilizador/NETDA_Quiz.git
+   git clone https://github.com/NETDA-Iscte/NETDA-Quiz.git
    ```
 
 2. **Instalar dependências:**
